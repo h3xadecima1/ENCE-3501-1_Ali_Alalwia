@@ -1,0 +1,30 @@
+LTspice 24.1.10 for Windows
+Circuit: C:\Users\S0l1d\02- VLSI\Lab01\5bit_DAC.spi
+Start Time: Thu Sep 25 19:30:03 2025
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+C:\Users\S0l1d\02- VLSI\Lab01\5bit_DAC.spi(26): Missing value, assuming 0V @ DC.
+
+v4 b4 0
+^^^^^^^
+C:\Users\S0l1d\02- VLSI\Lab01\5bit_DAC.spi(27): Missing value, assuming 0V @ DC.
+
+v3 b3 0
+^^^^^^^
+C:\Users\S0l1d\02- VLSI\Lab01\5bit_DAC.spi(28): Missing value, assuming 0V @ DC.
+
+v2 b2 0
+^^^^^^^
+C:\Users\S0l1d\02- VLSI\Lab01\5bit_DAC.spi(29): Missing value, assuming 0V @ DC.
+
+v1 b1 b0
+^^^^^^^^
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.162 seconds.
+
+Files loaded:
+C:\Users\S0l1d\02- VLSI\Lab01\5bit_DAC.spi
+

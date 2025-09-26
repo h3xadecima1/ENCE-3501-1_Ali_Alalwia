@@ -1,0 +1,32 @@
+*** SPICE deck for cell 5bit_DAC{sch} from library DAC
+*** Created on Fri Sep 19, 2025 11:32:33
+*** Last revised on Thu Sep 25, 2025 19:22:57
+*** Written on Thu Sep 25, 2025 19:30:02 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT DAC__R_divider FROM CELL R_divider{sch}
+.SUBCKT DAC__R_divider bot in out
+Rresnwell@2 net@12 in 10k
+Rresnwell@3 out net@12 10k
+Rresnwell@4 out bot 10k
+.ENDS DAC__R_divider
+
+.global gnd
+
+*** TOP LEVEL CELL: 5bit_DAC{sch}
+Rrespwell@1 net@20 gnd 10k
+XR_divide@0 net@0 b4 vout DAC__R_divider
+XR_divide@1 net@2 b3 net@0 DAC__R_divider
+XR_divide@2 net@4 b2 net@2 DAC__R_divider
+XR_divide@3 net@6 b1 net@4 DAC__R_divider
+XR_divide@4 net@20 b0 net@6 DAC__R_divider
+
+* Spice Code nodes in cell cell '5bit_DAC{sch}'
+v4 b4 0
+v3 b3 0
+v2 b2 0
+v1 b1 b0
+vin b0 0 DC 5
+.op
+.END

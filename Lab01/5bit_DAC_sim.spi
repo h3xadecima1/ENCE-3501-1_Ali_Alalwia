@@ -1,0 +1,43 @@
+*** SPICE deck for cell 5bit_DAC_sim{sch} from library DAC
+*** Created on Thu Sep 25, 2025 12:10:00
+*** Last revised on Thu Sep 25, 2025 12:47:14
+*** Written on Thu Sep 25, 2025 19:35:12 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT DAC__R_divider FROM CELL R_divider{sch}
+.SUBCKT DAC__R_divider bot in out
+Rresnwell@2 net@12 in 10k
+Rresnwell@3 out net@12 10k
+Rresnwell@4 out bot 10k
+.ENDS DAC__R_divider
+
+*** SUBCIRCUIT DAC__5bit_DAC FROM CELL 5bit_DAC{sch}
+.SUBCKT DAC__5bit_DAC b0 b1 b2 b3 b4 vout
+** GLOBAL gnd
+Rrespwell@1 net@20 gnd 10k
+XR_divide@0 net@0 b4 vout DAC__R_divider
+XR_divide@1 net@2 b3 net@0 DAC__R_divider
+XR_divide@2 net@4 b2 net@2 DAC__R_divider
+XR_divide@3 net@6 b1 net@4 DAC__R_divider
+XR_divide@4 net@20 b0 net@6 DAC__R_divider
+
+* Spice Code nodes in cell cell '5bit_DAC{sch}'
+*v4 b4 0
+*v3 b3 0
+*v2 b2 0
+*v1 b1 b0
+*vin b0 0 DC 5
+*.op
+.ENDS DAC__5bit_DAC
+
+.global gnd
+
+*** TOP LEVEL CELL: 5bit_DAC_sim{sch}
+Ccap@2 gnd vout 10p
+X_5bit_DAC@0 gnd gnd gnd gnd vin vout DAC__5bit_DAC
+
+* Spice Code nodes in cell cell '5bit_DAC_sim{sch}'
+vin vin 0 pulse(0v 2v 1u 1f 1f 3u 6u)
+.tran 0 2.4u 0 100p
+.END

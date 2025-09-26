@@ -1,0 +1,18 @@
+*** SPICE deck for cell R_divider_sim{sch} from library DAC
+*** Created on Fri Sep 19, 2025 11:31:26
+*** Last revised on Thu Sep 25, 2025 11:20:32
+*** Written on Thu Sep 25, 2025 19:28:15 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd
+
+*** TOP LEVEL CELL: R_divider_sim{sch}
+Rresnwell@0 net@2 vin 10k
+Rresnwell@1 vout net@2 10k
+Rresnwell@2 vout gnd 10k
+
+* Spice Code nodes in cell cell 'R_divider_sim{sch}'
+vin vin 0 DC 1
+.op
+.END
