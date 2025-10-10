@@ -1,0 +1,18 @@
+*** SPICE deck for cell NMOS_IV{lay} from library lab_3_nmos_esd_template
+*** Created on Fri Sep 30, 2022 01:20:24
+*** Last revised on Fri Oct 03, 2025 10:48:19
+*** Written on Fri Oct 03, 2025 11:05:52 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** TOP LEVEL CELL: NMOS_IV{lay}
+Mnmos@0 s g d gnd NMOS L=0.6U W=3U AS=5.85P AD=5.85P PS=9.9U PD=9.9U
+
+* Spice Code nodes in cell cell 'NMOS_IV{lay}'
+vs s 0 DC 0
+vg g 0 DC 0
+vd d 0 DC 0
+vb b 0
+.dc vd 0 5 1m vg 0 5 1
+.include C5_models.txt
+.END

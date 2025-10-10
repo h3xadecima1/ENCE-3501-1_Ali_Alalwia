@@ -1,0 +1,26 @@
+*** SPICE deck for cell sim{sch} from library week_5
+*** Created on Wed Oct 08, 2025 11:15:40
+*** Last revised on Wed Oct 08, 2025 11:20:27
+*** Written on Wed Oct 08, 2025 11:23:35 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT week_5__Not_Gate FROM CELL Not_Gate{sch}
+.SUBCKT week_5__Not_Gate in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out in gnd gnd NMOS L=0.6U W=3U
+Mpmos@0 out in vdd vdd PMOS L=0.6U W=6U
+
+* Spice Code nodes in cell cell 'Not_Gate{sch}'
+vdd vdd 0 DC 5
+vin in 0 DC 0
+.dc vin 0 5 1m
+.include C5_models.txt
+.ENDS week_5__Not_Gate
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: sim{sch}
+XNot_Gate@0 Not_Gate@0_in Not_Gate@0_out week_5__Not_Gate
+.END
