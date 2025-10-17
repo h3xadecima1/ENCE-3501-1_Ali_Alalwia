@@ -1,0 +1,41 @@
+*** SPICE deck for cell test_inverters{sch} from library week_5
+*** Created on Thu Oct 16, 2025 22:06:58
+*** Last revised on Thu Oct 16, 2025 22:57:49
+*** Written on Thu Oct 16, 2025 22:57:56 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT week_5__Not_Gate FROM CELL Not_Gate{sch}
+.SUBCKT week_5__Not_Gate in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out in gnd gnd NMOS L=1.8U W=1.8U
+Mpmos@0 out in vdd vdd PMOS L=3.6U W=1.8U
+
+* Spice Code nodes in cell cell 'Not_Gate{sch}'
+*vdd vdd 0 DC 5
+*vin in 0 DC 0
+*.dc vin 0 5 1m
+*.include C5_models.txt
+.ENDS week_5__Not_Gate
+
+*** SUBCIRCUIT week_5__Not_Gate2 FROM CELL Not_Gate2{sch}
+.SUBCKT week_5__Not_Gate2 in out
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 out in gnd gnd NMOS L=1.8U W=7.2U
+Mpmos@0 vdd in out vdd PMOS L=14.4U W=1.8U
+.ENDS week_5__Not_Gate2
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: test_inverters{sch}
+XNot_Gate@0 vin out1 week_5__Not_Gate
+XNot_Gate@1 vin out2 week_5__Not_Gate2
+
+* Spice Code nodes in cell cell 'test_inverters{sch}'
+vdd vdd 0 DC 5
+vin vin 0 DC 0
+.dc vin 0 5 1m
+.include C5_models.txt
+.END
