@@ -1,6 +1,6 @@
 LTspice 24.1.10 for Windows
-Circuit: C:\Users\S0l1d\OneDrive\Desktop\Tut_4\Not_Gate.spi
-Start Time: Wed Oct  8 11:24:49 2025
+Circuit: C:\Users\S0l1d\02- VLSI\Lab04\Not_Gate.spi
+Start Time: Tue Oct 21 18:53:22 2025
 Ignoring BSIM parameter XL
 Ignoring BSIM parameter XW
 Ignoring BSIM parameter XL
@@ -15,9 +15,9 @@ Warning: Ps = 0 is less than W.
 Warning: Pd = 0 is less than W.
 Warning: Ps = 0 is less than W.
 .step 
-Total elapsed time: 0.443 seconds.
+Total elapsed time: 0.213 seconds.
 
 Files loaded:
-C:\Users\S0l1d\OneDrive\Desktop\Tut_4\Not_Gate.spi
-C:\Users\S0l1d\OneDrive\Desktop\Tut_4\C5_models.txt
+C:\Users\S0l1d\02- VLSI\Lab04\Not_Gate.spi
+C:\Users\S0l1d\02- VLSI\Lab04\C5_models.txt
 
