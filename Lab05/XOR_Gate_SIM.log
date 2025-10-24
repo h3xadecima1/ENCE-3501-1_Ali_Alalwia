@@ -1,0 +1,23 @@
+LTspice 24.1.10 for Windows
+Circuit: C:\Users\S0l1d\OneDrive\Desktop\Lab_05\XOR_Gate_SIM.spi
+Start Time: Fri Oct 24 16:32:33 2025
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+Ignoring BSIM parameter XL
+Ignoring BSIM parameter XW
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Warning: Pd = 0 is less than W.
+Warning: Ps = 0 is less than W.
+Direct Newton iteration for .op point succeeded.
+Total elapsed time: 0.480 seconds.
+
+Files loaded:
+C:\Users\S0l1d\OneDrive\Desktop\Lab_05\XOR_Gate_SIM.spi
+C:\Users\S0l1d\OneDrive\Desktop\Lab_05\C5_models.txt
+

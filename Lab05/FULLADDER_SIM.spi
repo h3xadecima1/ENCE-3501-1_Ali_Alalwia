@@ -1,0 +1,67 @@
+*** SPICE deck for cell FULLADDER_SIM{sch} from library Lab_05
+*** Created on Fri Oct 24, 2025 16:34:52
+*** Last revised on Fri Oct 24, 2025 16:50:18
+*** Written on Fri Oct 24, 2025 17:20:57 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Lab_05__NAND_Gate FROM CELL NAND_Gate{sch}
+.SUBCKT Lab_05__NAND_Gate A AnandB B
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 AnandB A net@25 gnd NMOS L=0.6U W=1.8U
+Mnmos@1 net@25 B gnd gnd NMOS L=0.6U W=1.8U
+Mpmos@0 vdd A AnandB vdd PMOS L=0.6U W=1.8U
+Mpmos@1 vdd B AnandB vdd PMOS L=0.6U W=1.8U
+.ENDS Lab_05__NAND_Gate
+
+*** SUBCIRCUIT Lab_05__XOR_Gate FROM CELL XOR_Gate{sch}
+.SUBCKT Lab_05__XOR_Gate A AxorB B
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 net@63 B gnd gnd NMOS L=0.6U W=1.8U
+Mnmos@1 net@64 net@120 gnd gnd NMOS L=0.6U W=1.8U
+Mnmos@2 AxorB A net@63 gnd NMOS L=0.6U W=1.8U
+Mnmos@3 AxorB net@144 net@64 gnd NMOS L=0.6U W=1.8U
+Mnmos@4 net@120 B gnd gnd NMOS L=0.6U W=1.8U
+Mnmos@5 net@144 A gnd gnd NMOS L=0.6U W=1.8U
+Mpmos@0 vdd A net@46 vdd PMOS L=0.6U W=1.8U
+Mpmos@1 vdd B net@46 vdd PMOS L=0.6U W=1.8U
+Mpmos@2 net@46 net@144 AxorB vdd PMOS L=0.6U W=1.8U
+Mpmos@3 net@46 net@120 AxorB vdd PMOS L=0.6U W=1.8U
+Mpmos@4 vdd B net@120 vdd PMOS L=0.6U W=1.8U
+Mpmos@5 vdd A net@144 vdd PMOS L=0.6U W=1.8U
+.ENDS Lab_05__XOR_Gate
+
+*** SUBCIRCUIT Lab_05__FULLADDER2 FROM CELL FULLADDER2{sch}
+.SUBCKT Lab_05__FULLADDER2 a b cin cout s
+** GLOBAL gnd
+** GLOBAL vdd
+XNAND2_NM@2 net@54 net@36 cin Lab_05__NAND_Gate
+XNAND2_NM@3 a net@35 b Lab_05__NAND_Gate
+XNAND2_NM@4 net@35 cout net@36 Lab_05__NAND_Gate
+XXOR2_NM@2 a net@54 b Lab_05__XOR_Gate
+XXOR2_NM@3 cin s net@54 Lab_05__XOR_Gate
+
+* Spice Code nodes in cell cell 'FULLADDER2{sch}'
+*vdd vdd 0 dc 5
+*va a 0 pulse (0v 5v 0v 1n 1n 10n 20n)
+*vb b 0 pulse (0v 5v 5v 1n 1n 10n 20n)
+*vcin cin 0 pulse (0v 5v 0 2n 1n 1n 10n 20n)
+*.tran 0 60n
+*.include C5_models.txt
+.ENDS Lab_05__FULLADDER2
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: FULLADDER_SIM{sch}
+XFULLADDE@0 FULLADDE@0_a FULLADDE@0_b FULLADDE@0_cin cout s Lab_05__FULLADDER2
+
+* Spice Code nodes in cell cell 'FULLADDER_SIM{sch}'
+vdd vdd 0 dc 5
+va a 0 pulse(0v 5v 0n 1n 1n 10n 20n)
+vb b 0 pulse(0v 5v 5n 1n 1n 10n 20n)
+vcin cin 0 pulse(0v 5v 2n 1n 1n 10n 20n)
+.tran 0 60n
+.include C5_models.txt
+.END

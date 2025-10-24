@@ -1,0 +1,53 @@
+*** SPICE deck for cell FULLADDER2_NM_F13{sch} from library ee421l_f13_lab6
+*** Created on Mon Oct 14, 2013 08:07:00
+*** Last revised on Mon Oct 14, 2013 09:14:17
+*** Written on Fri Oct 24, 2025 12:08:52 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT ee421l_f13_lab6__NAND2_NM_F13 FROM CELL NAND2_NM_F13{sch}
+.SUBCKT ee421l_f13_lab6__NAND2_NM_F13 A AnandB B
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 AnandB A net@25 gnd NMOS L=0.6U W=3U
+Mnmos@1 net@25 B gnd gnd NMOS L=0.6U W=3U
+Mpmos@0 vdd A AnandB vdd PMOS L=0.6U W=3U
+Mpmos@1 vdd B AnandB vdd PMOS L=0.6U W=3U
+.ENDS ee421l_f13_lab6__NAND2_NM_F13
+
+*** SUBCIRCUIT ee421l_f13_lab6__XOR2_NM_F13 FROM CELL XOR2_NM_F13{sch}
+.SUBCKT ee421l_f13_lab6__XOR2_NM_F13 A AxorB B
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 net@63 B gnd gnd NMOS L=0.6U W=3U
+Mnmos@1 net@64 net@120 gnd gnd NMOS L=0.6U W=3U
+Mnmos@2 AxorB A net@63 gnd NMOS L=0.6U W=3U
+Mnmos@3 AxorB net@144 net@64 gnd NMOS L=0.6U W=3U
+Mnmos@4 net@120 B gnd gnd NMOS L=0.6U W=3U
+Mnmos@5 net@144 A gnd gnd NMOS L=0.6U W=3U
+Mpmos@0 vdd A net@46 vdd PMOS L=0.6U W=6U
+Mpmos@1 vdd B net@46 vdd PMOS L=0.6U W=6U
+Mpmos@2 net@46 net@144 AxorB vdd PMOS L=0.6U W=6U
+Mpmos@3 net@46 net@120 AxorB vdd PMOS L=0.6U W=6U
+Mpmos@4 vdd B net@120 vdd PMOS L=0.6U W=6U
+Mpmos@5 vdd A net@144 vdd PMOS L=0.6U W=6U
+.ENDS ee421l_f13_lab6__XOR2_NM_F13
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: FULLADDER2_NM_F13{sch}
+XNAND2_NM@2 net@54 net@36 cin ee421l_f13_lab6__NAND2_NM_F13
+XNAND2_NM@3 a net@35 b ee421l_f13_lab6__NAND2_NM_F13
+XNAND2_NM@4 net@35 cout net@36 ee421l_f13_lab6__NAND2_NM_F13
+XXOR2_NM@2 a net@54 b ee421l_f13_lab6__XOR2_NM_F13
+XXOR2_NM@3 cin s net@54 ee421l_f13_lab6__XOR2_NM_F13
+
+* Spice Code nodes in cell cell 'FULLADDER2_NM_F13{sch}'
+vdd vdd 0 dc 5
+Va a 0 pulse 5 0 0 1n 1n 2u 4u
+Vb b 0 pulse 5 0 0 1n 1n 1u 2u
+Vcin cin 0 pulse 5 0 0 1n 1n 4u 8u
+cload out 0 250fF
+.tran 0 10u
+.include C5_models.txt
+.END

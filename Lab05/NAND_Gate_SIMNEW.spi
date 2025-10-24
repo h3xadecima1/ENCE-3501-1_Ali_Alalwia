@@ -1,0 +1,29 @@
+*** SPICE deck for cell NAND_Gate_SIMNEW{sch} from library Lab_05
+*** Created on Fri Oct 11, 2013 00:51:31
+*** Last revised on Fri Oct 24, 2025 16:23:26
+*** Written on Fri Oct 24, 2025 16:23:52 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Lab_05__NAND_Gate FROM CELL NAND_Gate{sch}
+.SUBCKT Lab_05__NAND_Gate A AnandB B
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 AnandB A net@25 gnd NMOS L=0.6U W=1.8U
+Mnmos@1 net@25 B gnd gnd NMOS L=0.6U W=1.8U
+Mpmos@0 vdd A AnandB vdd PMOS L=0.6U W=1.8U
+Mpmos@1 vdd B AnandB vdd PMOS L=0.6U W=1.8U
+.ENDS Lab_05__NAND_Gate
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: NAND_Gate_SIMNEW{sch}
+XNAND2_NM@0 va vout_nand vb Lab_05__NAND_Gate
+
+* Spice Code nodes in cell cell 'NAND_Gate_SIMNEW{sch}'
+vdd vdd 0 dc 5
+va va 0 pulse(0v 5v 0n 1n 1n 10n 20n)
+vb vb 0 pulse(0v 5v 5n 1n 1n 10n 20n)
+.tran 0 40n
+.include C5_models.txt
+.END
