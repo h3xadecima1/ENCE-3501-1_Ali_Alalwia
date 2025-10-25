@@ -1,7 +1,7 @@
-*** SPICE deck for cell XOR_Gate_SIM{sch} from library Lab_05
-*** Created on Fri Oct 11, 2013 00:51:31
-*** Last revised on Fri Oct 24, 2025 19:20:04
-*** Written on Fri Oct 24, 2025 19:27:16 by Electric VLSI Design System, version 9.08
+*** SPICE deck for cell XOR_Gate_SIM_2{sch} from library Lab_05
+*** Created on Fri Oct 24, 2025 19:24:13
+*** Last revised on Fri Oct 24, 2025 19:29:55
+*** Written on Fri Oct 24, 2025 19:30:00 by Electric VLSI Design System, version 9.08
 *** Layout tech: mocmos, foundry MOSIS
 *** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
 
@@ -25,13 +25,12 @@ Mpmos@5 vdd A net@144 vdd PMOS L=0.6U W=1.8U
 
 .global gnd vdd
 
-*** TOP LEVEL CELL: XOR_Gate_SIM{sch}
-XXOR2_NM@0 va vout_xor vb Lab_05__XOR_Gate
+*** TOP LEVEL CELL: XOR_Gate_SIM_2{sch}
+XXOR_Gate@0 d_in exor_out vdd Lab_05__XOR_Gate
 
-* Spice Code nodes in cell cell 'XOR_Gate_SIM{sch}'
+* Spice Code nodes in cell cell 'XOR_Gate_SIM_2{sch}'
 vdd vdd 0 dc 5
-va va 0 pulse(0v 5v 0n 1n 1n 10n 20n)
-vb vb 0 pulse(0v 5v 5n 1n 1n 10n 20n)
+vin d_in 0 pulse(0v 5v 10n 1n 1n 40n 42n)
 .tran 0 40n
 .include C5_models.txt
 .END

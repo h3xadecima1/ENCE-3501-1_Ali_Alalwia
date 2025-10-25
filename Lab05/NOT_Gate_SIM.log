@@ -1,6 +1,6 @@
 LTspice 24.1.10 for Windows
 Circuit: C:\Users\S0l1d\OneDrive\Desktop\Lab_05\NOT_Gate_SIM.spi
-Start Time: Fri Oct 24 16:28:21 2025
+Start Time: Fri Oct 24 19:14:51 2025
 Ignoring BSIM parameter XL
 Ignoring BSIM parameter XW
 Ignoring BSIM parameter XL
@@ -15,7 +15,7 @@ Warning: Ps = 0 is less than W.
 Warning: Pd = 0 is less than W.
 Warning: Ps = 0 is less than W.
 Direct Newton iteration for .op point succeeded.
-Total elapsed time: 0.441 seconds.
+Total elapsed time: 0.467 seconds.
 
 Files loaded:
 C:\Users\S0l1d\OneDrive\Desktop\Lab_05\NOT_Gate_SIM.spi

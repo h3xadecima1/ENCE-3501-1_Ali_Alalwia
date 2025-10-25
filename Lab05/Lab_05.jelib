@@ -183,7 +183,7 @@ Es||D5G2;X-3;|conn@4|y|U
 X
 
 # Cell NAND_Gate;1{ic}
-CNAND_Gate;1{ic}||artwork|1381474093430|1381476390416|E
+CNAND_Gate;1{ic}||artwork|1381474093430|1761353797792|E
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NCircle|art@2||0|0|6|6|RRR||ART_degrees()F[0.0,3.1415927]
 NCircle|art@3||3.5|0|1|1||
@@ -198,7 +198,7 @@ Aschematic:wire|net@0|||0|pin@1||-3|2|pin@0||-5|2
 Aschematic:wire|net@1|||1800|pin@3||4|0|pin@2||9|0
 Aschematic:wire|net@2|||0|pin@5||-3|-2|pin@4||-5|-2
 EA||D5G2;|pin@0||I
-EAnandB||D5G2;X1.5;|pin@2||O
+EAnandB||D5G2;X-3.5;|pin@2||O
 EB||D5G2;|pin@4||I
 X
 
@@ -260,7 +260,7 @@ Evdd||D5G2;|SFRAME_N@0|vdd|U
 X
 
 # Cell NAND_Gate;1{sch}
-CNAND_Gate;1{sch}||schematic|1380307947811|1761343321824|
+CNAND_Gate;1{sch}||schematic|1380307947811|1761348477630|
 INAND_Gate;1{ic}|INV_20_1@0||21|-4|||D5G4;
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NOff-Page|conn@0||-5|3||||
@@ -276,11 +276,12 @@ NWire_Pin|pin@4||7|-5||||
 NWire_Pin|pin@5||7|6||||
 NWire_Pin|pin@6||1.5|3||||
 NWire_Pin|pin@7||10.5|3||||
+NWire_Pin|pin@8||1.5|9.5||||
+NWire_Pin|pin@9||10.5|9.5||||
+NWire_Pin|pin@10||6|9.5||||
 NTransistor|pmos@0||-0.5|6|||R|2|ATTR_length(D5G0.5;Y-2;)S2.0|ATTR_width(D5G1;X1;Y-2;)S6|SIM_spice_model(D5G1;X-1;Y-3;)SPMOS
 NTransistor|pmos@1||8.5|6|||R|2|ATTR_length(D5G0.5;Y-2;)S2.0|ATTR_width(D5G1;X1;Y-2;)S6|SIM_spice_model(D5G1;X-1;Y-3;)SPMOS
-NPower|pwr@0||1.5|10|-1.5|-1.5||
-NPower|pwr@1||10.5|10|-1.5|-1.5||
-Awire|net@21|||2700|pmos@0|d|1.5|8|pwr@0||1.5|10
+NPower|pwr@2||6|11.5||||
 Awire|net@25|||900|nmos@0|s|1.5|-2|nmos@1|d|1.5|-3
 Awire|net@26|||1800|conn@0|y|-3|3|pin@1||-2|3
 Awire|net@27|||2700|pin@1||-2|3|pin@2||-2|6
@@ -297,7 +298,11 @@ Awire|net@37|||2700|pin@6||1.5|3|pmos@0|s|1.5|4
 Awire|net@38|||1800|pin@6||1.5|3|pin@7||10.5|3
 Awire|net@39|||2700|pin@7||10.5|3|pmos@1|s|10.5|4
 Awire|net@40|||0|conn@2|y|14|3|pin@7||10.5|3
-Awire|net@41|||900|pwr@1||10.5|10|pmos@1|d|10.5|8
+Awire|net@42|||2700|pmos@0|d|1.5|8|pin@8||1.5|9.5
+Awire|net@44|||900|pin@9||10.5|9.5|pmos@1|d|10.5|8
+Awire|net@45|||1800|pin@8||1.5|9.5|pin@10||6|9.5
+Awire|net@46|||1800|pin@10||6|9.5|pin@9||10.5|9.5
+Awire|net@47|||900|pwr@2||6|11.5|pin@10||6|9.5
 EA||D5G2;X-2.5;|conn@0|y|I
 EAnandB||D5G2;|conn@2|a|O
 EB||D5G2;X-2.5;|conn@1|y|I
@@ -322,43 +327,37 @@ Evdd||D5G2;|pin@4||U
 X
 
 # Cell NAND_Gate_SIM;1{sch}
-CNAND_Gate_SIM;1{sch}||schematic|1381474291314|1761344459530|
+CNAND_Gate_SIM;1{sch}||schematic|1381474291314|1761354157632|
 INAND_Gate;1{ic}|NAND2_NM@0||-1.5|0|||D5G4;
 Ngeneric:Facet-Center|art@0||0|0||||AV
-NOff-Page|conn@0||-17|2||||
-NOff-Page|conn@1||20|0||||
+NOff-Page|conn@0||-12|2||||
+NOff-Page|conn@1||16|0||||
 NWire_Pin|pin@0||-14|2||||
 NWire_Pin|pin@1||15|0||||
 NWire_Pin|pin@3||-14|-2||||
 Ngeneric:Invisible-Pin|pin@4||-0.5|-7.5|||||SIM_spice_card(D5G1;)S[vdd vdd 0 dc 5,vin d_in 0 pulse(0v 5v 10n 1n 1n 40n 42n),.tran 0 40n,.include C5_models.txt]
-NPower|pwr@0||-16.5|-2||||
+NPower|pwr@0||-12.5|-2||||
 Awire|a|D5G1;||0|NAND2_NM@0|A|-6.5|2|pin@0||-14|2
 Awire|b|D5G1;||0|NAND2_NM@0|B|-6.5|-2|pin@3||-14|-2
-Awire|net@0|||0|pin@3||-14|-2|pwr@0||-16.5|-2
-Awire|net@1|||1800|conn@0|y|-15|2|pin@0||-14|2
-Awire|net@2|||1800|pin@1||15|0|conn@1|a|18|0
-Awire|out|D5G1;||1800|NAND2_NM@0|AnandB|7.5|0|pin@1||15|0
+Awire|net@0|||1800|pin@3||-14|-2|pwr@0||-12.5|-2
+Awire|net@1|||0|conn@0|y|-10|2|pin@0||-14|2
+Awire|net@2|||0|pin@1||15|0|conn@1|a|14|0
+Awire|out|D5G1;X-4;||1800|NAND2_NM@0|AnandB|7.5|0|pin@1||15|0
 Ed_in||D5G1.5;X1.5;|conn@0|a|U
-Enand_d_out||D5G1;X2;|conn@1|a|U
+Enand_d_out||D5G1;X-2;|conn@1|a|U
 X
 
 # Cell NAND_Gate_SIM_2;1{sch}
-CNAND_Gate_SIM_2;1{sch}||schematic|1381474291314|1761344606152|
-INAND_Gate;1{ic}|NAND2_NM@0||-1.5|0|||D5G4;
+CNAND_Gate_SIM_2;1{sch}||schematic|1381474291314|1761354491209|
+INAND_Gate;1{ic}|NAND2_NM@0||-1.5|-1|||D5G4;
 Ngeneric:Facet-Center|art@0||0|0||||AV
-NOff-Page|conn@2||-17|2||||
-NOff-Page|conn@3||-17.5|-2||||
-NOff-Page|conn@4||18.5|0||||
-NWire_Pin|pin@0||-14|2||||
-NWire_Pin|pin@1||15|0||||
-NWire_Pin|pin@3||-14|-2||||
+NOff-Page|conn@2||-12.5|1||||
+NOff-Page|conn@3||-12.5|-3||||
+NOff-Page|conn@4||10|-1||||
 Ngeneric:Invisible-Pin|pin@4||-0.5|-7.5|||||SIM_spice_card(D5G1;)S[vdd vdd 0 dc 5,va va 0 pulse(0v 5v 0n 1n 1n 10n 20n),vb vb 0 pulse(0v 5v 5n 1n 1n 10n 20n),.tran 0 40n,.include C5_models.txt]
-Awire|a|D5G1;||0|NAND2_NM@0|A|-6.5|2|conn@2|y|-15|2
-Awire|b|D5G1;||0|NAND2_NM@0|B|-6.5|-2|conn@3|y|-15.5|-2
-Awire|net@3|||1800|conn@2|y|-15|2|pin@0||-14|2
-Awire|net@4|||1800|conn@3|y|-15.5|-2|pin@3||-14|-2
-Awire|net@5|||1800|pin@1||15|0|conn@4|a|16.5|0
-Awire|out|D5G1;||1800|NAND2_NM@0|AnandB|7.5|0|pin@1||15|0
+Awire|net@9|||1800|NAND2_NM@0|AnandB|7.5|-1|conn@4|a|8|-1
+Awire|net@11|||1800|conn@3|y|-10.5|-3|NAND2_NM@0|B|-6.5|-3
+Awire|net@12|||0|NAND2_NM@0|A|-6.5|1|conn@2|y|-10.5|1
 Eva||D5G2;X1.5;|conn@2|a|U
 Evb||D5G2;X2;|conn@3|a|U
 Evout_nand||D5G1;X-2;|conn@4|y|U
@@ -460,7 +459,7 @@ Evdd||D5G4;|well@0||U
 X
 
 # Cell XOR_Gate;1{ic}
-CXOR_Gate;1{ic}||artwork|1381536508576|1381536982690|E
+CXOR_Gate;1{ic}||artwork|1381536508576|1761355018277|E
 Ngeneric:Facet-Center|art@0||0|0||||AV
 NSpline|art@5||0.25|1.5|7.5|3|||trace()V[-3.75/1.5,-1.75/1.5,2.25/1,3.75/-1.5]
 NSpline|art@6||0.25|-1.5|7.5|3|||trace()V[-3.75/-1.5,-1.75/-1.5,2.25/-1,3.75/1.5]
@@ -476,7 +475,7 @@ Aschematic:wire|net@0|||0|pin@1||-3|1|pin@0||-6|1
 Aschematic:wire|net@1|||1800|pin@3||4|0|pin@2||8|0
 Aschematic:wire|net@2|||0|pin@5||-3|-1|pin@4||-6|-1
 EA||D5G2;|pin@0||I
-EAxorB||D5G2;|pin@2||O
+EAxorB||D5G2;X3.5;|pin@2||O
 EB||D5G2;|pin@4||I
 X
 
@@ -755,23 +754,32 @@ Evdd||D5G2;|pin@4||U
 X
 
 # Cell XOR_Gate_SIM;1{sch}
-CXOR_Gate_SIM;1{sch}||schematic|1381474291314|1761345147576|
+CXOR_Gate_SIM;1{sch}||schematic|1381474291314|1761355204707|
 IXOR_Gate;1{ic}|XOR2_NM@0||0|0|||D5G4;
 Ngeneric:Facet-Center|art@0||0|0||||AV
-NOff-Page|conn@0||-14|1||||
-NOff-Page|conn@1||-14|-1||||
-NOff-Page|conn@2||17|0||||
-NWire_Pin|pin@13||13.5|0||||
-NWire_Pin|pin@14||-10.5|1||||
-NWire_Pin|pin@15||-10.5|-1||||
+NOff-Page|conn@0||-10.5|1||||
+NOff-Page|conn@1||-10.5|-1||||
+NOff-Page|conn@2||11|0||||
 Ngeneric:Invisible-Pin|pin@17||0|-7|||||SIM_spice_card(D5G1;)S[vdd vdd 0 dc 5,va va 0 pulse(0v 5v 0n 1n 1n 10n 20n),vb vb 0 pulse(0v 5v 5n 1n 1n 10n 20n),.tran 0 40n,.include C5_models.txt]
-Awire|a|D5G1;||0|XOR2_NM@0|A|-6|1|conn@0|y|-12|1
-Awire|b|D5G1;||0|XOR2_NM@0|B|-6|-1|pin@15||-10.5|-1
-Awire|net@0|||1800|conn@0|y|-12|1|pin@14||-10.5|1
-Awire|net@1|||1800|conn@1|y|-12|-1|pin@15||-10.5|-1
-Awire|net@2|||1800|pin@13||13.5|0|conn@2|a|15|0
-Awire|out|D5G1;||1800|XOR2_NM@0|AxorB|8|0|pin@13||13.5|0
+Awire|net@5|||1800|conn@1|y|-8.5|-1|XOR2_NM@0|B|-6|-1
+Awire|net@6|||1800|conn@0|y|-8.5|1|XOR2_NM@0|A|-6|1
+Awire|net@7|||1800|XOR2_NM@0|AxorB|8|0|conn@2|a|9|0
 Eva||D5G2;X1.5;|conn@0|a|U
 Evb||D5G2;X1.5;|conn@1|a|U
 Evout_xor||D5G1;X-2.5;|conn@2|y|U
+X
+
+# Cell XOR_Gate_SIM_2;1{sch}
+CXOR_Gate_SIM_2;1{sch}||schematic|1761355453621|1761355795714|
+IXOR_Gate;1{ic}|XOR_Gate@0||-6.5|2|||D5G4;
+Ngeneric:Facet-Center|art@0||0|0||||AV
+NOff-Page|conn@0||-22|3||||
+NOff-Page|conn@1||8|2||||
+Ngeneric:Invisible-Pin|pin@0||-7|-6.5|||||SIM_spice_card(D5G1;)S[vdd vdd 0 dc 5,vin d_in 0 pulse(0v 5v 10n 1n 1n 40n 42n),.tran 0 40n,.include C5_models.txt]
+NPower|pwr@0||-17.5|1||||
+Awire|net@0|||1800|pwr@0||-17.5|1|XOR_Gate@0|B|-12.5|1
+Awire|net@1|||1800|conn@0|y|-20|3|XOR_Gate@0|A|-12.5|3
+Awire|net@2|||0|conn@1|a|6|2|XOR_Gate@0|AxorB|1.5|2
+Ed_in||D5G2;X1.5;|conn@0|a|U
+Eexor_out||D5G1;X-2;|conn@1|y|U
 X

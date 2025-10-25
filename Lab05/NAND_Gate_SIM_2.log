@@ -1,6 +1,6 @@
 LTspice 24.1.10 for Windows
-Circuit: C:\Users\S0l1d\OneDrive\Desktop\Lab_05\NAND_Gate_SIM.spi
-Start Time: Fri Oct 24 19:01:45 2025
+Circuit: C:\Users\S0l1d\OneDrive\Desktop\Lab_05\NAND_Gate_SIM_2.spi
+Start Time: Fri Oct 24 19:10:15 2025
 Ignoring BSIM parameter XL
 Ignoring BSIM parameter XW
 Ignoring BSIM parameter XL
@@ -15,9 +15,9 @@ Warning: Ps = 0 is less than W.
 Warning: Pd = 0 is less than W.
 Warning: Ps = 0 is less than W.
 Direct Newton iteration for .op point succeeded.
-Total elapsed time: 0.458 seconds.
+Total elapsed time: 0.435 seconds.
 
 Files loaded:
-C:\Users\S0l1d\OneDrive\Desktop\Lab_05\NAND_Gate_SIM.spi
+C:\Users\S0l1d\OneDrive\Desktop\Lab_05\NAND_Gate_SIM_2.spi
 C:\Users\S0l1d\OneDrive\Desktop\Lab_05\C5_models.txt
 
