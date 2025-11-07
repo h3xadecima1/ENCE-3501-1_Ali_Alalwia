@@ -1,0 +1,31 @@
+*** SPICE deck for cell 5_stage{sch} from library Lab_06
+*** Created on Thu Nov 06, 2025 18:22:20
+*** Last revised on Thu Nov 06, 2025 18:42:32
+*** Written on Thu Nov 06, 2025 23:08:38 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: 5_stage{sch}
+Ccap@0 osc net@2 100u
+Ccap@1 osc2 net@8 100u
+Ccap@2 osc net@37 100u
+Ccap@3 osc net@53 100u
+Ccap@4 osc2 net@42 100u
+Ccap@5 gnd vout 100u
+Mnmos@0 net@2 vdd vdd gnd N_50n L=0.3U W=3U
+Mnmos@1 net@8 net@2 net@2 gnd N_50n L=0.3U W=3U
+Mnmos@2 net@37 net@8 net@8 gnd N_50n L=0.3U W=3U
+Mnmos@3 net@42 net@37 net@37 gnd N_50n L=0.3U W=3U
+Mnmos@4 net@53 net@42 net@42 gnd N_50n L=0.3U W=3U
+Mnmos@5 vout net@53 net@53 gnd N_50n L=0.3U W=3U
+Rres@0 vout gnd 2MEG
+
+* Spice Code nodes in cell cell '5_stage{sch}'
+vdd vdd 0 dc 1V
+Vosc osc 0 PULSE(0 1 0 1p 1p 25m 50m)
+Vosc2 osc2 0 PULSE(0 1 25m 1p 1p 25m 50m)
+.tran 0 1000 1m
+.include cmosedu_models.txt
+.END

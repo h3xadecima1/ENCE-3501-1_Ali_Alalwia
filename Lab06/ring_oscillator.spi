@@ -1,0 +1,32 @@
+*** SPICE deck for cell ring_oscillator{sch} from library Lab_06
+*** Created on Thu Nov 06, 2025 18:46:03
+*** Last revised on Thu Nov 06, 2025 19:27:06
+*** Written on Thu Nov 06, 2025 23:05:23 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: ring_oscillator{sch}
+Ccap@0 gnd net@8 10u
+Ccap@1 gnd net@36 10u
+Ccap@2 gnd net@54 10u
+Mnmos@0 net@36 net@8 gnd gnd N_50n L=0.3U W=3U
+Mnmos@1 net@8 osc net@0 gnd N_50n L=0.3U W=3U
+Mnmos@2 net@0 En gnd gnd N_50n L=0.3U W=3U
+Mnmos@5 net@54 net@36 gnd gnd N_50n L=0.3U W=3U
+Mnmos@6 osc2 net@54 gnd gnd N_50n L=0.3U W=3U
+Mnmos@7 osc osc2 gnd gnd N_50n L=0.3U W=3U
+Mpmos@0 net@8 osc vdd vdd P_50n L=0.3U W=6U
+Mpmos@1 net@8 En vdd vdd P_50n L=0.3U W=6U
+Mpmos@2 net@36 net@8 vdd vdd P_50n L=0.3U W=6U
+Mpmos@3 net@54 net@36 vdd vdd P_50n L=0.3U W=6U
+Mpmos@6 osc2 net@54 vdd vdd P_50n L=0.3U W=6U
+Mpmos@7 osc osc2 vdd vdd P_50n L=0.3U W=6U
+
+* Spice Code nodes in cell cell 'ring_oscillator{sch}'
+vdd vdd 0 dc 1V
+Ven En 0 dc 1V
+.tran 0 10
+.include cmosedu_models.txt
+.END

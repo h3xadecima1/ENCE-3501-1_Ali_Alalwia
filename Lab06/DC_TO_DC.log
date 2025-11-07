@@ -1,0 +1,9 @@
+C:\Users\S0l1d\02- VLSI\Lab_06\DC_TO_DC.spi(30): Expected a sequence <directive or device instantiation end of line> here.
+.tran 0 1000 1m
+^^^^^^^^^^^^^^^
+C:\Users\S0l1d\02- VLSI\Lab_06\DC_TO_DC.spi(51): Expected a sequence <directive or device instantiation end of line> here.
+.tran 0 1
+^^^^^^^^^
+C:\Users\S0l1d\02- VLSI\Lab_06\DC_TO_DC.spi(78): Expected a sequence <directive or device instantiation end of line> here.
+.tran 0 10
+^^^^^^^^^^

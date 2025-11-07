@@ -1,0 +1,94 @@
+*** SPICE deck for cell DC_TO_DC{sch} from library Lab_06
+*** Created on Thu Nov 06, 2025 20:27:21
+*** Last revised on Thu Nov 06, 2025 23:03:27
+*** Written on Thu Nov 06, 2025 23:03:32 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Lab_06__5_stage FROM CELL 5_stage{sch}
+.SUBCKT Lab_06__5_stage osc osc2 vout
+** GLOBAL gnd
+** GLOBAL vdd
+Ccap@0 osc net@2 100u
+Ccap@1 osc2 net@8 100u
+Ccap@2 osc net@37 100u
+Ccap@3 osc net@53 100u
+Ccap@4 osc2 net@42 100u
+Ccap@5 gnd vout 100u
+Mnmos@0 net@2 vdd vdd gnd N_50n L=0.3U W=3U
+Mnmos@1 net@8 net@2 net@2 gnd N_50n L=0.3U W=3U
+Mnmos@2 net@37 net@8 net@8 gnd N_50n L=0.3U W=3U
+Mnmos@3 net@42 net@37 net@37 gnd N_50n L=0.3U W=3U
+Mnmos@4 net@53 net@42 net@42 gnd N_50n L=0.3U W=3U
+Mnmos@5 vout net@53 net@53 gnd N_50n L=0.3U W=3U
+Rres@0 vout gnd 2MEG
+
+* Spice Code nodes in cell cell '5_stage{sch}'
+vdd vdd 0 dc 1V
+Vosc osc 0 PULSE(0 1 0 1p 1p 25m 50m)
+Vosc2 osc2 0 PULSE(0 1 25m 1p 1p 25m 50m)
+.tran 0 1000 1m
+.include cmosedu_models.txt
+.ENDS Lab_06__5_stage
+
+*** SUBCIRCUIT Lab_06__regulation_circuit FROM CELL regulation_circuit{sch}
+.SUBCKT Lab_06__regulation_circuit En Vout
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 net@21 net@9 gnd gnd N_50n L=0.3U W=3U
+Mnmos@1 net@24 net@21 gnd gnd N_50n L=0.3U W=3U
+Mnmos@2 En net@24 gnd gnd N_50n L=0.3U W=3U
+Mpmos@0 net@21 gnd vdd vdd P_50n L=12U W=6U
+Mpmos@1 net@21 net@24 vdd vdd P_50n L=12U W=6U
+Mpmos@2 net@24 net@21 vdd vdd P_50n L=0.3U W=6U
+Mpmos@3 En net@24 vdd vdd P_50n L=0.3U W=6U
+Rres@0 vdd net@9 20MEG
+Rres@1 net@9 Vout 3MEG
+
+* Spice Code nodes in cell cell 'regulation_circuit{sch}'
+vdd vdd 0 DC 1V
+vout vout 0 SIN(1.5 1.5 50)
+.tran 0 1
+.include cmosedu_models.txt
+.ENDS Lab_06__regulation_circuit
+
+*** SUBCIRCUIT Lab_06__ring_oscillator FROM CELL ring_oscillator{sch}
+.SUBCKT Lab_06__ring_oscillator En osc osc2
+** GLOBAL gnd
+** GLOBAL vdd
+Ccap@0 gnd net@8 10u
+Ccap@1 gnd net@36 10u
+Ccap@2 gnd net@54 10u
+Mnmos@0 net@36 net@8 gnd gnd N_50n L=0.3U W=3U
+Mnmos@1 net@8 osc net@0 gnd N_50n L=0.3U W=3U
+Mnmos@2 net@0 En gnd gnd N_50n L=0.3U W=3U
+Mnmos@5 net@54 net@36 gnd gnd N_50n L=0.3U W=3U
+Mnmos@6 osc2 net@54 gnd gnd N_50n L=0.3U W=3U
+Mnmos@7 osc osc2 gnd gnd N_50n L=0.3U W=3U
+Mpmos@0 net@8 osc vdd vdd P_50n L=0.3U W=6U
+Mpmos@1 net@8 En vdd vdd P_50n L=0.3U W=6U
+Mpmos@2 net@36 net@8 vdd vdd P_50n L=0.3U W=6U
+Mpmos@3 net@54 net@36 vdd vdd P_50n L=0.3U W=6U
+Mpmos@6 osc2 net@54 vdd vdd P_50n L=0.3U W=6U
+Mpmos@7 osc osc2 vdd vdd P_50n L=0.3U W=6U
+
+* Spice Code nodes in cell cell 'ring_oscillator{sch}'
+vdd vdd 0 dc 1V
+Ven En 0 dc 1V
+.tran 0 10
+.include cmosedu_models.txt
+.ENDS Lab_06__ring_oscillator
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: DC_TO_DC{sch}
+X_5_stage@0 net@2 net@4 net@0 Lab_06__5_stage
+Xregulati@0 regulati@0_En net@0 Lab_06__regulation_circuit
+Xring_osc@0 ring_osc@0_En net@2 net@4 Lab_06__ring_oscillator
+
+* Spice Code nodes in cell cell 'DC_TO_DC{sch}'
+vdd vdd 0 dc 1V
+VEn en 0 dc 1V
+.tran 10 200 10m
+.include cmosedu_models.txt
+.END

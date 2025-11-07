@@ -1,0 +1,17 @@
+LTspice 24.1.10 for Windows
+Circuit: C:\Users\S0l1d\02- VLSI\Lab_06\5_stage.spi
+Start Time: Thu Nov  6 23:08:38 2025
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+Direct Newton iteration for .op point succeeded.
+
+Simulation stopped by user.
+Total elapsed time: 31.674 seconds.
+
+Files loaded:
+C:\Users\S0l1d\02- VLSI\Lab_06\5_stage.spi
+C:\Users\S0l1d\02- VLSI\Lab_06\cmosedu_models.txt
+

@@ -1,0 +1,27 @@
+*** SPICE deck for cell charge_pump{sch} from library Lab_06
+*** Created on Fri Oct 31, 2025 11:19:17
+*** Last revised on Thu Nov 06, 2025 18:23:12
+*** Written on Thu Nov 06, 2025 23:07:40 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: charge_pump{sch}
+Ccap@0 osc net@3 100u
+Ccap@1 osc2 net@5 100u
+Ccap@2 osc net@8 100u
+Ccap@3 gnd vout 100u
+Mnmos@0 net@3 vdd vdd gnd N_50n L=0.3U W=3U
+Mnmos@1 net@5 net@3 net@3 gnd N_50n L=0.3U W=3U
+Mnmos@2 net@8 net@5 net@5 gnd N_50n L=0.3U W=3U
+Mnmos@3 vout net@8 net@8 gnd N_50n L=0.3U W=3U
+Rres@0 vout gnd 2MEG
+
+* Spice Code nodes in cell cell 'charge_pump{sch}'
+vdd vdd 0 dc 1V
+Vosc osc 0 PULSE(0 1 0 1p 1p 25m 50m)
+Vosc2 osc2 0 PULSE(0 1 25m 1p 1p 25m 50m)
+.tran 0 1000 1m
+.include cmosedu_models.txt
+.END
