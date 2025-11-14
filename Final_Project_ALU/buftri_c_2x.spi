@@ -1,0 +1,19 @@
+*** SPICE deck for cell buftri_c_2x{sch} from library ALU
+*** Created on Sun Nov 12, 2006 21:35:56
+*** Last revised on Thu Nov 13, 2025 01:21:23
+*** Written on Thu Nov 13, 2025 03:58:08 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: ALU:buftri_c_2x{sch}
+MMpmos0 net@1 net@54 y vdd P_50n L=0.6U W=11.1U
+MMpmos1 vdd net@6 net@1 vdd P_50n L=0.6U W=11.1U
+MMpmos2 vdd en net@54 vdd P_50n L=0.6U W=2.7U
+MMpmos3 vdd d net@6 vdd P_50n L=0.6U W=2.7U
+Mnmos0 net@3 net@6 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos1 y en net@3 gnd N_50n L=0.6U W=8.1U
+Mnmos2 net@54 en gnd gnd N_50n L=0.6U W=1.8U
+Mnmos3 net@6 d gnd gnd N_50n L=0.6U W=1.8U
+.END

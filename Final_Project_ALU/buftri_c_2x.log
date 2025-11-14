@@ -1,0 +1,27 @@
+LTspice 24.1.10 for Windows
+Circuit: C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\buftri_c_2x.spi
+Start Time: Thu Nov 13 03:58:08 2025
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\buftri_c_2x.spi(11): Node or model name expected.
+MMpmos0 net@1 net@54 y vdd P_50n L=0.6U W=11.1U
+                          ^^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\buftri_c_2x.spi(12): Node or model name expected.
+MMpmos1 vdd net@6 net@1 vdd P_50n L=0.6U W=11.1U
+                           ^^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\buftri_c_2x.spi(13): Node or model name expected.
+MMpmos2 vdd en net@54 vdd P_50n L=0.6U W=2.7U
+                         ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\buftri_c_2x.spi(14): Node or model name expected.
+MMpmos3 vdd d net@6 vdd P_50n L=0.6U W=2.7U
+                       ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\buftri_c_2x.spi(15): Node or model name expected.
+Mnmos0 net@3 net@6 gnd gnd N_50n L=0.6U W=8.1U
+                          ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\buftri_c_2x.spi(16): Node or model name expected.
+Mnmos1 y en net@3 gnd N_50n L=0.6U W=8.1U
+                     ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\buftri_c_2x.spi(17): Node or model name expected.
+Mnmos2 net@54 en gnd gnd N_50n L=0.6U W=1.8U
+                        ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\buftri_c_2x.spi(18): Node or model name expected.
+Mnmos3 net@6 d gnd gnd N_50n L=0.6U W=1.8U
+                      ^^^^^^^^^^^^^^^^^^^^

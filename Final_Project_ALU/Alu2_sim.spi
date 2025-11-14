@@ -1,0 +1,259 @@
+*** SPICE deck for cell Alu2_sim{sch} from library ALU
+*** Created on Fri Nov 14, 2025 09:25:12
+*** Last revised on Fri Nov 14, 2025 10:33:54
+*** Written on Fri Nov 14, 2025 10:33:59 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT ALU__Alu2 FROM CELL Alu2{sch}
+.SUBCKT ALU__Alu2 a0 a1 a2 a3 adds b0 b1 b2 b3 carry En gnd IB_AU0 IB_AU1 IB_AU2 IB_AU3 vdd
+** GLOBAL gnd
+** GLOBAL vdd
+MMpmos0 net@987 net@1022 IB_AU3 vdd P_50n L=0.6U W=11.1U
+MMpmos1 vdd net@1009 net@987 vdd P_50n L=0.6U W=11.1U
+MMpmos2 vdd En net@1022 vdd P_50n L=0.6U W=2.7U
+MMpmos3 vdd net@557 net@1009 vdd P_50n L=0.6U W=2.7U
+MMpmos4 net@1031 net@1066 IB_AU2 vdd P_50n L=0.6U W=11.1U
+MMpmos5 vdd net@1057 net@1031 vdd P_50n L=0.6U W=11.1U
+MMpmos6 vdd En net@1066 vdd P_50n L=0.6U W=2.7U
+MMpmos7 vdd net@652 net@1057 vdd P_50n L=0.6U W=2.7U
+MMpmos8 net@1075 net@1110 IB_AU1 vdd P_50n L=0.6U W=11.1U
+MMpmos9 vdd net@1097 net@1075 vdd P_50n L=0.6U W=11.1U
+MMpmos10 vdd En net@1110 vdd P_50n L=0.6U W=2.7U
+MMpmos11 vdd net@747 net@1097 vdd P_50n L=0.6U W=2.7U
+MMpmos12 net@1119 net@1154 IB_AU0 vdd P_50n L=0.6U W=11.1U
+MMpmos13 vdd net@1141 net@1119 vdd P_50n L=0.6U W=11.1U
+MMpmos14 vdd En net@1154 vdd P_50n L=0.6U W=2.7U
+MMpmos15 vdd net@1138 net@1141 vdd P_50n L=0.6U W=2.7U
+Mnmos0 net@204 a0 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos1 net@215 a1 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos2 net@227 a2 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos3 net@239 a3 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos4 net@290 net@204 gnd gnd N_50n L=0.6U W=3.6U
+Mnmos5 net@299 a0 gnd gnd N_50n L=0.6U W=3.6U
+Mnmos6 net@272 adds net@290 gnd N_50n L=0.6U W=3.6U
+Mnmos7 net@272 sb net@299 gnd N_50n L=0.6U W=3.6U
+Mnmos8 b net@272 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos9 sb adds gnd gnd N_50n L=0.6U W=1.8U
+Mnmos10 net@338 net@215 gnd gnd N_50n L=0.6U W=3.6U
+Mnmos11 net@347 a1 gnd gnd N_50n L=0.6U W=3.6U
+Mnmos12 net@320 adds net@338 gnd N_50n L=0.6U W=3.6U
+Mnmos13 net@320 sb_1 net@347 gnd N_50n L=0.6U W=3.6U
+Mnmos14 b_1 net@320 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos15 sb_1 adds gnd gnd N_50n L=0.6U W=1.8U
+Mnmos16 net@386 net@227 gnd gnd N_50n L=0.6U W=3.6U
+Mnmos17 net@395 a2 gnd gnd N_50n L=0.6U W=3.6U
+Mnmos18 net@368 adds net@386 gnd N_50n L=0.6U W=3.6U
+Mnmos19 net@368 sb_2 net@395 gnd N_50n L=0.6U W=3.6U
+Mnmos20 b_2 net@368 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos21 sb_2 adds gnd gnd N_50n L=0.6U W=1.8U
+Mnmos22 net@434 net@239 gnd gnd N_50n L=0.6U W=3.6U
+Mnmos23 net@443 a3 gnd gnd N_50n L=0.6U W=3.6U
+Mnmos24 net@416 adds net@434 gnd N_50n L=0.6U W=3.6U
+Mnmos25 net@416 sb_3 net@443 gnd N_50n L=0.6U W=3.6U
+Mnmos26 b_3 net@416 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos27 sb_3 adds gnd gnd N_50n L=0.6U W=1.8U
+Mnmos28 net@933 gnd gnd gnd N_50n L=0.6U W=3.6U
+Mnmos29 net@942 gnd gnd gnd N_50n L=0.6U W=3.6U
+Mnmos30 net@922 adds net@933 gnd N_50n L=0.6U W=3.6U
+Mnmos31 net@922 sb_8 net@942 gnd N_50n L=0.6U W=3.6U
+Mnmos32 c_3 net@922 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos33 sb_8 adds gnd gnd N_50n L=0.6U W=1.8U
+Mnmos34 net@1005 net@1009 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos35 IB_AU3 En net@1005 gnd N_50n L=0.6U W=8.1U
+Mnmos36 net@1022 En gnd gnd N_50n L=0.6U W=1.8U
+Mnmos37 net@1009 net@557 gnd gnd N_50n L=0.6U W=1.8U
+Mnmos38 net@1049 net@1057 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos39 IB_AU2 En net@1049 gnd N_50n L=0.6U W=8.1U
+Mnmos40 net@1066 En gnd gnd N_50n L=0.6U W=1.8U
+Mnmos41 net@1057 net@652 gnd gnd N_50n L=0.6U W=1.8U
+Mnmos42 net@1093 net@1097 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos43 IB_AU1 En net@1093 gnd N_50n L=0.6U W=8.1U
+Mnmos44 net@1110 En gnd gnd N_50n L=0.6U W=1.8U
+Mnmos45 net@1097 net@747 gnd gnd N_50n L=0.6U W=1.8U
+Mnmos46 net@1137 net@1141 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos47 IB_AU0 En net@1137 gnd N_50n L=0.6U W=8.1U
+Mnmos48 net@1154 En gnd gnd N_50n L=0.6U W=1.8U
+Mnmos49 net@1141 net@1138 gnd gnd N_50n L=0.6U W=1.8U
+Mnmos@0 net@511 b0 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@1 net@511 b gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@2 coutb c net@511 gnd N_50n L=0.6U W=2.4U
+Mnmos@3 net@522 b0 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@4 coutb b net@522 gnd N_50n L=0.6U W=2.4U
+Mnmos@5 net@543 b0 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@6 net@543 b gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@7 net@543 c gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@8 sb_4 coutb net@543 gnd N_50n L=0.6U W=2.4U
+Mnmos@9 net@591 b0 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@10 net@590 b net@591 gnd N_50n L=0.6U W=2.4U
+Mnmos@11 sb_4 c net@590 gnd N_50n L=0.6U W=2.4U
+Mnmos@12 carry coutb gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@13 net@557 sb_4 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@14 net@606 b1 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@15 net@606 b_1 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@16 coutb_1 c_1 net@606 gnd N_50n L=0.6U W=2.4U
+Mnmos@17 net@617 b1 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@18 coutb_1 b_1 net@617 gnd N_50n L=0.6U W=2.4U
+Mnmos@19 net@638 b1 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@20 net@638 b_1 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@21 net@638 c_1 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@22 sb_5 coutb_1 net@638 gnd N_50n L=0.6U W=2.4U
+Mnmos@23 net@686 b1 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@24 net@685 b_1 net@686 gnd N_50n L=0.6U W=2.4U
+Mnmos@25 sb_5 c_1 net@685 gnd N_50n L=0.6U W=2.4U
+Mnmos@26 c coutb_1 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@27 net@652 sb_5 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@28 net@701 b2 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@29 net@701 b_2 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@30 coutb_2 c_2 net@701 gnd N_50n L=0.6U W=2.4U
+Mnmos@31 net@712 b2 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@32 coutb_2 b_2 net@712 gnd N_50n L=0.6U W=2.4U
+Mnmos@33 net@733 b2 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@34 net@733 b_2 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@35 net@733 c_2 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@36 sb_6 coutb_2 net@733 gnd N_50n L=0.6U W=2.4U
+Mnmos@37 net@781 b2 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@38 net@780 b_2 net@781 gnd N_50n L=0.6U W=2.4U
+Mnmos@39 sb_6 c_2 net@780 gnd N_50n L=0.6U W=2.4U
+Mnmos@40 c_1 coutb_2 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@41 net@747 sb_6 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@42 net@796 b3 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@43 net@796 b_3 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@44 coutb_3 c_3 net@796 gnd N_50n L=0.6U W=2.4U
+Mnmos@45 net@807 b3 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@46 coutb_3 b_3 net@807 gnd N_50n L=0.6U W=2.4U
+Mnmos@47 net@828 b3 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@48 net@828 b_3 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@49 net@828 c_3 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@50 sb_7 coutb_3 net@828 gnd N_50n L=0.6U W=2.4U
+Mnmos@51 net@876 b3 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@52 net@875 b_3 net@876 gnd N_50n L=0.6U W=2.4U
+Mnmos@53 sb_7 c_3 net@875 gnd N_50n L=0.6U W=2.4U
+Mnmos@54 c_2 coutb_3 gnd gnd N_50n L=0.6U W=2.4U
+Mnmos@55 net@1138 sb_7 gnd gnd N_50n L=0.6U W=2.4U
+Mpmos0 vdd a0 net@204 vdd P_50n L=0.6U W=11.1U
+Mpmos1 vdd a1 net@215 vdd P_50n L=0.6U W=11.1U
+Mpmos2 vdd a2 net@227 vdd P_50n L=0.6U W=11.1U
+Mpmos3 vdd a3 net@239 vdd P_50n L=0.6U W=11.1U
+Mpmos4 net@280 sb net@272 vdd P_50n L=0.6U W=5.4U
+Mpmos5 vdd net@204 net@280 vdd P_50n L=0.6U W=5.4U
+Mpmos6 net@278 adds net@272 vdd P_50n L=0.6U W=5.4U
+Mpmos7 vdd a0 net@278 vdd P_50n L=0.6U W=5.4U
+Mpmos8 vdd net@272 b vdd P_50n L=0.6U W=11.1U
+Mpmos9 vdd adds sb vdd P_50n L=0.6U W=2.7U
+Mpmos10 net@328 sb_1 net@320 vdd P_50n L=0.6U W=5.4U
+Mpmos11 vdd net@215 net@328 vdd P_50n L=0.6U W=5.4U
+Mpmos12 net@326 adds net@320 vdd P_50n L=0.6U W=5.4U
+Mpmos13 vdd a1 net@326 vdd P_50n L=0.6U W=5.4U
+Mpmos14 vdd net@320 b_1 vdd P_50n L=0.6U W=11.1U
+Mpmos15 vdd adds sb_1 vdd P_50n L=0.6U W=2.7U
+Mpmos16 net@376 sb_2 net@368 vdd P_50n L=0.6U W=5.4U
+Mpmos17 vdd net@227 net@376 vdd P_50n L=0.6U W=5.4U
+Mpmos18 net@374 adds net@368 vdd P_50n L=0.6U W=5.4U
+Mpmos19 vdd a2 net@374 vdd P_50n L=0.6U W=5.4U
+Mpmos20 vdd net@368 b_2 vdd P_50n L=0.6U W=11.1U
+Mpmos21 vdd adds sb_2 vdd P_50n L=0.6U W=2.7U
+Mpmos22 net@424 sb_3 net@416 vdd P_50n L=0.6U W=5.4U
+Mpmos23 vdd net@239 net@424 vdd P_50n L=0.6U W=5.4U
+Mpmos24 net@422 adds net@416 vdd P_50n L=0.6U W=5.4U
+Mpmos25 vdd a3 net@422 vdd P_50n L=0.6U W=5.4U
+Mpmos26 vdd net@416 b_3 vdd P_50n L=0.6U W=11.1U
+Mpmos27 vdd adds sb_3 vdd P_50n L=0.6U W=2.7U
+Mpmos28 net@923 sb_8 net@922 vdd P_50n L=0.6U W=5.4U
+Mpmos29 vdd gnd net@923 vdd P_50n L=0.6U W=5.4U
+Mpmos30 net@921 adds net@922 vdd P_50n L=0.6U W=5.4U
+Mpmos31 vdd gnd net@921 vdd P_50n L=0.6U W=5.4U
+Mpmos32 vdd net@922 c_3 vdd P_50n L=0.6U W=11.1U
+Mpmos33 vdd adds sb_8 vdd P_50n L=0.6U W=2.7U
+Mpmos@0 net@599 c sb_4 vdd P_50n L=0.6U W=4.8U
+Mpmos@1 net@598 b net@599 vdd P_50n L=0.6U W=4.8U
+Mpmos@2 vdd b0 net@598 vdd P_50n L=0.6U W=4.8U
+Mpmos@3 net@529 coutb sb_4 vdd P_50n L=0.6U W=4.8U
+Mpmos@4 vdd b net@529 vdd P_50n L=0.6U W=4.8U
+Mpmos@5 vdd c net@529 vdd P_50n L=0.6U W=4.8U
+Mpmos@6 vdd b0 net@529 vdd P_50n L=0.6U W=4.8U
+Mpmos@7 vdd coutb carry vdd P_50n L=0.6U W=4.8U
+Mpmos@8 vdd b0 net@601 vdd P_50n L=0.6U W=4.8U
+Mpmos@9 net@601 b coutb vdd P_50n L=0.6U W=4.8U
+Mpmos@10 vdd b0 net@524 vdd P_50n L=0.6U W=4.8U
+Mpmos@11 vdd b net@524 vdd P_50n L=0.6U W=4.8U
+Mpmos@12 net@524 c coutb vdd P_50n L=0.6U W=4.8U
+Mpmos@13 vdd sb_4 net@557 vdd P_50n L=0.6U W=4.8U
+Mpmos@14 net@694 c_1 sb_5 vdd P_50n L=0.6U W=4.8U
+Mpmos@15 net@693 b_1 net@694 vdd P_50n L=0.6U W=4.8U
+Mpmos@16 vdd b1 net@693 vdd P_50n L=0.6U W=4.8U
+Mpmos@17 net@624 coutb_1 sb_5 vdd P_50n L=0.6U W=4.8U
+Mpmos@18 vdd b_1 net@624 vdd P_50n L=0.6U W=4.8U
+Mpmos@19 vdd c_1 net@624 vdd P_50n L=0.6U W=4.8U
+Mpmos@20 vdd b1 net@624 vdd P_50n L=0.6U W=4.8U
+Mpmos@21 vdd coutb_1 c vdd P_50n L=0.6U W=4.8U
+Mpmos@22 vdd b1 net@696 vdd P_50n L=0.6U W=4.8U
+Mpmos@23 net@696 b_1 coutb_1 vdd P_50n L=0.6U W=4.8U
+Mpmos@24 vdd b1 net@619 vdd P_50n L=0.6U W=4.8U
+Mpmos@25 vdd b_1 net@619 vdd P_50n L=0.6U W=4.8U
+Mpmos@26 net@619 c_1 coutb_1 vdd P_50n L=0.6U W=4.8U
+Mpmos@27 vdd sb_5 net@652 vdd P_50n L=0.6U W=4.8U
+Mpmos@28 net@789 c_2 sb_6 vdd P_50n L=0.6U W=4.8U
+Mpmos@29 net@788 b_2 net@789 vdd P_50n L=0.6U W=4.8U
+Mpmos@30 vdd b2 net@788 vdd P_50n L=0.6U W=4.8U
+Mpmos@31 net@719 coutb_2 sb_6 vdd P_50n L=0.6U W=4.8U
+Mpmos@32 vdd b_2 net@719 vdd P_50n L=0.6U W=4.8U
+Mpmos@33 vdd c_2 net@719 vdd P_50n L=0.6U W=4.8U
+Mpmos@34 vdd b2 net@719 vdd P_50n L=0.6U W=4.8U
+Mpmos@35 vdd coutb_2 c_1 vdd P_50n L=0.6U W=4.8U
+Mpmos@36 vdd b2 net@791 vdd P_50n L=0.6U W=4.8U
+Mpmos@37 net@791 b_2 coutb_2 vdd P_50n L=0.6U W=4.8U
+Mpmos@38 vdd b2 net@714 vdd P_50n L=0.6U W=4.8U
+Mpmos@39 vdd b_2 net@714 vdd P_50n L=0.6U W=4.8U
+Mpmos@40 net@714 c_2 coutb_2 vdd P_50n L=0.6U W=4.8U
+Mpmos@41 vdd sb_6 net@747 vdd P_50n L=0.6U W=4.8U
+Mpmos@42 net@884 c_3 sb_7 vdd P_50n L=0.6U W=4.8U
+Mpmos@43 net@883 b_3 net@884 vdd P_50n L=0.6U W=4.8U
+Mpmos@44 vdd b3 net@883 vdd P_50n L=0.6U W=4.8U
+Mpmos@45 net@814 coutb_3 sb_7 vdd P_50n L=0.6U W=4.8U
+Mpmos@46 vdd b_3 net@814 vdd P_50n L=0.6U W=4.8U
+Mpmos@47 vdd c_3 net@814 vdd P_50n L=0.6U W=4.8U
+Mpmos@48 vdd b3 net@814 vdd P_50n L=0.6U W=4.8U
+Mpmos@49 vdd coutb_3 c_2 vdd P_50n L=0.6U W=4.8U
+Mpmos@50 vdd b3 net@886 vdd P_50n L=0.6U W=4.8U
+Mpmos@51 net@886 b_3 coutb_3 vdd P_50n L=0.6U W=4.8U
+Mpmos@52 vdd b3 net@809 vdd P_50n L=0.6U W=4.8U
+Mpmos@53 vdd b_3 net@809 vdd P_50n L=0.6U W=4.8U
+Mpmos@54 net@809 c_3 coutb_3 vdd P_50n L=0.6U W=4.8U
+Mpmos@55 vdd sb_7 net@1138 vdd P_50n L=0.6U W=4.8U
+.ENDS ALU__Alu2
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: Alu2_sim{sch}
+XAlu2@0 a0 a1 a2 a3 adds b0 b1 b2 b3 carry En gnd IB_AU0 IB_AU1 IB_AU2 IB_AU3 vdd ALU__Alu2
+
+* Spice Code nodes in cell cell 'Alu2_sim{sch}'
+***********************
+* ALU TEST STIMULUS
+***********************
+* --- Power ---
+Vdd vdd 0 5
+Vgnd gnd 0 0
+* --- Enable ---
+VEn En 0 0 PULSE(0 5 0ns 1ns 1ns 50ns 200ns)
+Vcarry carry 0 0
+* ---- A Inputs ----
+Va0 a0 0 PULSE(0 5 0ns 1ns 1ns 50ns 100ns)
+Va1 a1 0 PULSE(0 5 0ns 1ns 1ns 100ns 200ns)
+Va2 a2 0 PULSE(0 5 0ns 1ns 1ns 200ns 400ns)
+Va3 a3 0 PULSE(0 5 0ns 1ns 1ns 400ns 800ns)
+* ---- B Inputs ----
+Vb0 b0 0 PULSE(0 5 0ns 1ns 1ns 50ns 100ns)
+Vb1 b1 0 PULSE(0 5 0ns 1ns 1ns 100ns 200ns)
+Vb2 b2 0 PULSE(0 5 0ns 1ns 1ns 200ns 400ns)
+Vb3 b3 0 PULSE(0 5 0ns 1ns 1ns 400ns 800ns)
+* ---- Add/Sub Control ----
+Vadds adds 0 PULSE(0 5 0ns 1ns 1ns 1us 2us)
+***********************
+* Simulation Settings
+***********************
+*VenAlways En 0 5
+.tran 0.5ns 2us
+.include "cmosedu_models.txt"
+.END

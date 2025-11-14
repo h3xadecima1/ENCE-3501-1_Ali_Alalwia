@@ -1,0 +1,143 @@
+*** SPICE deck for cell Alu_sim{sch} from library ALU
+*** Created on Wed Nov 12, 2025 11:13:34
+*** Last revised on Thu Nov 13, 2025 22:23:04
+*** Written on Thu Nov 13, 2025 23:32:12 by Electric VLSI Design System, version 9.08
+*** Layout tech: mocmos, foundry MOSIS
+*** UC SPICE *** , MIN_RESIST 4.0, MIN_CAPAC 0.1FF
+
+*** SUBCIRCUIT Lab_05__NAND_Gate FROM CELL Lab_05:NAND_Gate{sch}
+.SUBCKT Lab_05__NAND_Gate A AnandB B
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos@0 AnandB A net@25 gnd N_50n L=0.6U W=1.8U
+Mnmos@1 net@25 B gnd gnd N_50n L=0.6U W=1.8U
+Mpmos@0 vdd A AnandB vdd P_50n L=0.6U W=1.8U
+Mpmos@1 vdd B AnandB vdd P_50n L=0.6U W=1.8U
+.ENDS Lab_05__NAND_Gate
+
+*** SUBCIRCUIT Lab_05__XOR_Gate FROM CELL Lab_05:XOR_Gate{sch}
+.SUBCKT Lab_05__XOR_Gate A AxorB B
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos5 net@144 A gnd gnd N_50n L=0.6U W=1.8U
+Mnmos@0 net@63 B gnd gnd N_50n L=0.6U W=1.8U
+Mnmos@1 net@64 net@120 gnd gnd N_50n L=0.6U W=1.8U
+Mnmos@2 AxorB A net@63 gnd N_50n L=0.6U W=1.8U
+Mnmos@3 AxorB net@144 net@64 gnd N_50n L=0.6U W=1.8U
+Mnmos@4 net@120 B gnd gnd N_50n L=0.6U W=1.8U
+Mpmos5 vdd A net@144 vdd P_50n L=0.6U W=1.8U
+Mpmos@0 vdd A net@46 vdd P_50n L=0.6U W=1.8U
+Mpmos@1 vdd B net@46 vdd P_50n L=0.6U W=1.8U
+Mpmos@2 net@46 net@144 AxorB vdd P_50n L=0.6U W=1.8U
+Mpmos@3 net@46 net@120 AxorB vdd P_50n L=0.6U W=1.8U
+Mpmos@4 vdd B net@120 vdd P_50n L=0.6U W=1.8U
+.ENDS Lab_05__XOR_Gate
+
+*** SUBCIRCUIT ALU__FULLADDER2 FROM CELL FULLADDER2{sch}
+.SUBCKT ALU__FULLADDER2 a b cin cout s
+** GLOBAL gnd
+** GLOBAL vdd
+XNAND2_NM@2 net@54 net@36 cin Lab_05__NAND_Gate
+XNAND2_NM@3 a net@35 b Lab_05__NAND_Gate
+XNAND2_NM@4 net@35 cout net@36 Lab_05__NAND_Gate
+XXOR2_NM@2 a net@54 b Lab_05__XOR_Gate
+XXOR2_NM@3 cin s net@54 Lab_05__XOR_Gate
+.ENDS ALU__FULLADDER2
+
+*** SUBCIRCUIT ALU__buftri_c_2x FROM CELL buftri_c_2x{sch}
+.SUBCKT ALU__buftri_c_2x d en y
+** GLOBAL gnd
+** GLOBAL vdd
+MMpmos0 net@1 net@54 y vdd P_50n L=0.6U W=11.1U
+MMpmos1 vdd net@6 net@1 vdd P_50n L=0.6U W=11.1U
+MMpmos2 vdd en net@54 vdd P_50n L=0.6U W=2.7U
+MMpmos3 vdd d net@6 vdd P_50n L=0.6U W=2.7U
+Mnmos0 net@3 net@6 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos1 y en net@3 gnd N_50n L=0.6U W=8.1U
+Mnmos2 net@54 en gnd gnd N_50n L=0.6U W=1.8U
+Mnmos3 net@6 d gnd gnd N_50n L=0.6U W=1.8U
+.ENDS ALU__buftri_c_2x
+
+*** SUBCIRCUIT ALU__inv_4x FROM CELL inv_4x{sch}
+.SUBCKT ALU__inv_4x a y
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos0 y a gnd gnd N_50n L=0.6U W=8.1U
+Mpmos0 vdd a y vdd P_50n L=0.6U W=11.1U
+.ENDS ALU__inv_4x
+
+*** SUBCIRCUIT ALU__mux2_c_4x FROM CELL mux2_c_4x{sch}
+.SUBCKT ALU__mux2_c_4x d0 d1 s y
+** GLOBAL gnd
+** GLOBAL vdd
+Mnmos0 net@3 d1 gnd gnd N_50n L=0.6U W=3.6U
+Mnmos1 net@4 d0 gnd gnd N_50n L=0.6U W=3.6U
+Mnmos2 net@6 s net@3 gnd N_50n L=0.6U W=3.6U
+Mnmos3 net@6 sb net@4 gnd N_50n L=0.6U W=3.6U
+Mnmos4 y net@6 gnd gnd N_50n L=0.6U W=8.1U
+Mnmos5 sb s gnd gnd N_50n L=0.6U W=1.8U
+Mpmos0 net@15 sb net@6 vdd P_50n L=0.6U W=5.4U
+Mpmos1 vdd d1 net@15 vdd P_50n L=0.6U W=5.4U
+Mpmos2 net@12 s net@6 vdd P_50n L=0.6U W=5.4U
+Mpmos3 vdd d0 net@12 vdd P_50n L=0.6U W=5.4U
+Mpmos4 vdd net@6 y vdd P_50n L=0.6U W=11.1U
+Mpmos5 vdd s sb vdd P_50n L=0.6U W=2.7U
+.ENDS ALU__mux2_c_4x
+
+*** SUBCIRCUIT ALU__Alu FROM CELL Alu{sch}
+.SUBCKT ALU__Alu a0 a1 a2 a3 adds b0 b1 b2 b3 carry En IB_AU0 IB_AU1 IB_AU2 IB_AU3
+** GLOBAL gnd
+** GLOBAL vdd
+XFULLADDE@1 b1 net@115 net@67 net@71 net@90 ALU__FULLADDER2
+XFULLADDE@2 b2 net@114 net@63 net@67 net@89 ALU__FULLADDER2
+XFULLADDE@3 b3 net@52 net@62 net@63 net@88 ALU__FULLADDER2
+XFULLADDE@4 b0 net@165 net@71 carry net@168 ALU__FULLADDER2
+Xbuftri_c@0 net@168 En IB_AU0 ALU__buftri_c_2x
+Xbuftri_c@1 net@90 En IB_AU1 ALU__buftri_c_2x
+Xbuftri_c@2 net@89 En IB_AU2 ALU__buftri_c_2x
+Xbuftri_c@3 net@88 En IB_AU3 ALU__buftri_c_2x
+Xinv_4x@0 a2 net@111 ALU__inv_4x
+Xinv_4x@1 a1 net@112 ALU__inv_4x
+Xinv_4x@2 a0 net@113 ALU__inv_4x
+Xinv_4x@3 a3 net@11 ALU__inv_4x
+Xmux2_c_4@1 a3 net@11 adds net@52 ALU__mux2_c_4x
+Xmux2_c_4@2 a2 net@111 adds net@114 ALU__mux2_c_4x
+Xmux2_c_4@3 a1 net@112 adds net@115 ALU__mux2_c_4x
+Xmux2_c_4@4 a0 net@113 adds net@165 ALU__mux2_c_4x
+Xmux2_c_4@6 gnd gnd adds net@62 ALU__mux2_c_4x
+.ENDS ALU__Alu
+
+.global gnd vdd
+
+*** TOP LEVEL CELL: Alu_sim{sch}
+XAlu@0 a0 a1 a2 a3 adds b0 b1 b2 b3 carry En IB_AU0 IB_AU1 IB_AU2 IB_AU3 ALU__Alu
+
+* Spice Code nodes in cell cell 'Alu_sim{sch}'
+***********************
+* ALU TEST STIMULUS
+***********************
+* --- Power ---
+Vdd vdd 0 5
+Vgnd gnd 0 0
+* --- Enable ---
+VEn En 0 5
+Vcarry carry 0 5
+* ---- A Inputs ----
+Va0 a0 0 PULSE(0 5 0ns 1ns 1ns 50ns 100ns)
+Va1 a1 0 PULSE(0 5 0ns 1ns 1ns 100ns 200ns)
+Va2 a2 0 PULSE(0 5 0ns 1ns 1ns 200ns 400ns)
+Va3 a3 0 PULSE(0 5 0ns 1ns 1ns 400ns 800ns)
+* ---- B Inputs ----
+Vb0 b0 0 PULSE(0 5 0ns 1ns 1ns 50ns 100ns)
+Vb1 b1 0 PULSE(0 5 0ns 1ns 1ns 100ns 200ns)
+Vb2 b2 0 PULSE(0 5 0ns 1ns 1ns 200ns 400ns)
+Vb3 b3 0 PULSE(0 5 0ns 1ns 1ns 400ns 800ns)
+* ---- Add/Sub Control ----
+Vadds adds 0 PULSE(0 5 0ns 1ns 1ns 1us 2us)
+***********************
+* Simulation Settings
+***********************
+*VenAlways En 0 5
+.tran 0.5ns 2us
+.include "cmosedu_models.txt"
+.END

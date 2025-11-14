@@ -1,0 +1,117 @@
+LTspice 24.1.10 for Windows
+Circuit: C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi
+Start Time: Thu Nov 13 04:07:01 2025
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(12): Node or model name expected.
+Mnmos@0 AnandB A net@25 gnd N_50n L=0.6U W=1.8U
+                           ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(13): Node or model name expected.
+Mnmos@1 net@25 B gnd gnd N_50n L=0.6U W=1.8U
+                        ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(14): Node or model name expected.
+Mpmos@0 vdd A AnandB vdd P_50n L=0.6U W=1.8U
+                        ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(15): Node or model name expected.
+Mpmos@1 vdd B AnandB vdd P_50n L=0.6U W=1.8U
+                        ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(22): Node or model name expected.
+Mnmos5 net@144 A gnd gnd N_50n L=0.6U W=1.8U
+                        ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(23): Node or model name expected.
+Mnmos@0 net@63 B gnd gnd N_50n L=0.6U W=1.8U
+                        ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(24): Node or model name expected.
+Mnmos@1 net@64 net@120 gnd gnd N_50n L=0.6U W=1.8U
+                              ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(25): Node or model name expected.
+Mnmos@2 AxorB A net@63 gnd N_50n L=0.6U W=1.8U
+                          ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(26): Node or model name expected.
+Mnmos@3 AxorB net@144 net@64 gnd N_50n L=0.6U W=1.8U
+                                ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(27): Node or model name expected.
+Mnmos@4 net@120 B gnd gnd N_50n L=0.6U W=1.8U
+                         ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(28): Node or model name expected.
+Mpmos5 vdd A net@144 vdd P_50n L=0.6U W=1.8U
+                        ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(29): Node or model name expected.
+Mpmos@0 vdd A net@46 vdd P_50n L=0.6U W=1.8U
+                        ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(30): Node or model name expected.
+Mpmos@1 vdd B net@46 vdd P_50n L=0.6U W=1.8U
+                        ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(31): Node or model name expected.
+Mpmos@2 net@46 net@144 AxorB vdd P_50n L=0.6U W=1.8U
+                                ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(32): Node or model name expected.
+Mpmos@3 net@46 net@120 AxorB vdd P_50n L=0.6U W=1.8U
+                                ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(33): Node or model name expected.
+Mpmos@4 vdd B net@120 vdd P_50n L=0.6U W=1.8U
+                         ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(51): Node or model name expected.
+MMpmos0 net@1 net@54 y vdd P_50n L=0.6U W=11.1U
+                          ^^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(52): Node or model name expected.
+MMpmos1 vdd net@6 net@1 vdd P_50n L=0.6U W=11.1U
+                           ^^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(53): Node or model name expected.
+MMpmos2 vdd en net@54 vdd P_50n L=0.6U W=2.7U
+                         ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(54): Node or model name expected.
+MMpmos3 vdd d net@6 vdd P_50n L=0.6U W=2.7U
+                       ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(55): Node or model name expected.
+Mnmos0 net@3 net@6 gnd gnd N_50n L=0.6U W=8.1U
+                          ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(56): Node or model name expected.
+Mnmos1 y en net@3 gnd N_50n L=0.6U W=8.1U
+                     ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(57): Node or model name expected.
+Mnmos2 net@54 en gnd gnd N_50n L=0.6U W=1.8U
+                        ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(58): Node or model name expected.
+Mnmos3 net@6 d gnd gnd N_50n L=0.6U W=1.8U
+                      ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(65): Node or model name expected.
+Mnmos0 y a gnd gnd N_50n L=0.6U W=8.1U
+                  ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(66): Node or model name expected.
+Mpmos0 vdd a y vdd P_50n L=0.6U W=11.1U
+                  ^^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(73): Node or model name expected.
+Mnmos0 net@3 d1 gnd gnd N_50n L=0.6U W=3.6U
+                       ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(74): Node or model name expected.
+Mnmos1 net@4 d0 gnd gnd N_50n L=0.6U W=3.6U
+                       ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(75): Node or model name expected.
+Mnmos2 net@6 s net@3 gnd N_50n L=0.6U W=3.6U
+                        ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(76): Node or model name expected.
+Mnmos3 net@6 sb net@4 gnd N_50n L=0.6U W=3.6U
+                         ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(77): Node or model name expected.
+Mnmos4 y net@6 gnd gnd N_50n L=0.6U W=8.1U
+                      ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(78): Node or model name expected.
+Mnmos5 sb s gnd gnd N_50n L=0.6U W=1.8U
+                   ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(79): Node or model name expected.
+Mpmos0 net@15 sb net@6 vdd P_50n L=0.6U W=5.4U
+                          ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(80): Node or model name expected.
+Mpmos1 vdd d1 net@15 vdd P_50n L=0.6U W=5.4U
+                        ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(81): Node or model name expected.
+Mpmos2 net@12 s net@6 vdd P_50n L=0.6U W=5.4U
+                         ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(82): Node or model name expected.
+Mpmos3 vdd d0 net@12 vdd P_50n L=0.6U W=5.4U
+                        ^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(83): Node or model name expected.
+Mpmos4 vdd net@6 y vdd P_50n L=0.6U W=11.1U
+                      ^^^^^^^^^^^^^^^^^^^^^
+C:\Users\S0l1d\OneDrive\Desktop\VLSI_Project\Alu.spi(84): Node or model name expected.
+Mpmos5 vdd s sb vdd P_50n L=0.6U W=2.7U
+                   ^^^^^^^^^^^^^^^^^^^^
